@@ -51,20 +51,36 @@
         </div>
 
         <!-- Chat mockup — le produit, en messages -->
-        <div class="chat reveal d4" role="img" aria-label="Exemple de conversation entre un client et INSCULPE">
+        <div class="chat reveal d4" role="img" aria-label="Exemple de conversation entre un client et l'assistant INSCULPE : photo du dégât, devis reçu dans le chat, créneau choisi">
           <div class="chat-head">
             <div class="chat-avatar">IN</div>
             <div class="chat-id">
               <span class="chat-name">INSCULPE</span>
-              <span class="chat-status">répond en quelques minutes</span>
+              <span class="chat-status">assistant · répond en quelques minutes</span>
             </div>
           </div>
           <div class="chat-body">
             <p class="chat-time">Aujourd'hui 09:41</p>
-            <div class="bubble in">Bonjour, j'ai une fuite sous l'évier de la cuisine 😅</div>
-            <div class="bubble out">Bonjour ! Un plombier du réseau peut passer demain entre 9h et 11h. Le devis vous est envoyé avant toute intervention.</div>
-            <div class="bubble in">Parfait, demain 9h 👍</div>
-            <div class="bubble out">C'est noté. Vous recevrez la photo de clôture dès la fin de l'intervention.</div>
+            <div class="bubble in photo"><img src="assets/photo-mur.svg" alt="Photo envoyée par le client : trou dans un mur en plâtre" width="400" height="300"></div>
+            <div class="bubble in">Bonjour, un trou dans le mur du salon en déplaçant un meuble 😅</div>
+            <div class="bubble out">Bonjour ! Photo bien reçue : rebouchage plâtre + raccord peinture. Voici votre devis 👇</div>
+            <div class="devis-card">
+              <div class="devis-head">
+                <span class="devis-title">Devis nº 2189</span>
+                <span class="devis-badge">Prix garanti</span>
+              </div>
+              <div class="devis-row"><span>Rebouchage &amp; enduit</span><span>85 €</span></div>
+              <div class="devis-row"><span>Raccord peinture</span><span>60 €</span></div>
+              <div class="devis-total"><span>Total TTC</span><span>145 €</span></div>
+              <div class="devis-accept">Accepter le devis</div>
+            </div>
+            <div class="bubble out">Devis accepté ✓ Choisissez votre créneau :</div>
+            <div class="slots">
+              <span class="slot">Aujourd'hui 16h–18h</span>
+              <span class="slot selected">Demain 9h–11h ✓</span>
+              <span class="slot">Vendredi 14h–16h</span>
+            </div>
+            <div class="bubble out">C'est confirmé pour demain, 9h–11h. Karim, artisan du réseau, intervient. Vous recevrez la photo de clôture dès la fin.</div>
             <div class="bubble out done"><span class="check">✓</span> Intervention clôturée — photo jointe</div>
           </div>
         </div>
@@ -90,7 +106,8 @@
             <a class="link-more" href="mailto:contact@insculpe.com?subject=Demande%20particulier">Demander une intervention <span class="chev">›</span></a>
             <div class="tile-visual">
               <div class="mini-chat">
-                <div class="bubble in">La poignée de la porte d'entrée est cassée…</div>
+                <div class="bubble in photo"><img src="assets/photo-porte.svg" alt="Photo envoyée par le client : porte claquée, serrure bloquée" width="400" height="300"></div>
+                <div class="bubble in">Porte claquée, poignée cassée…</div>
                 <div class="bubble out">Un serrurier passe cet après-midi. Devis : envoyé ✓</div>
               </div>
             </div>

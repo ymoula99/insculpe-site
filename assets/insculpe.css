@@ -187,6 +187,85 @@ section { scroll-margin-top: 72px; }
 }
 .check { font-weight: 800; }
 
+.bubble.photo {
+  padding: 4px;
+  max-width: 62%;
+  line-height: 0;
+}
+.bubble.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 17px;
+}
+
+/* devis reçu dans le chat */
+.devis-card {
+  align-self: flex-end;
+  width: 86%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  border-bottom-right-radius: 6px;
+  padding: 14px 16px 13px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.07);
+  font-size: 14px;
+}
+.devis-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 9px;
+}
+.devis-title { font-weight: 700; font-size: 14.5px; }
+.devis-badge {
+  font-size: 11px; font-weight: 700; letter-spacing: .02em;
+  color: var(--copper-deep);
+  background: rgba(168,90,50,.10);
+  padding: 3px 9px; border-radius: 999px;
+}
+.devis-row {
+  display: flex; justify-content: space-between;
+  color: var(--ink-2);
+  padding: 2.5px 0;
+}
+.devis-total {
+  display: flex; justify-content: space-between;
+  font-weight: 800;
+  border-top: 1px solid var(--line);
+  margin-top: 8px; padding-top: 8px;
+}
+.devis-accept {
+  margin-top: 11px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--copper) 0%, var(--copper-deep) 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 9px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* choix du créneau */
+.slots {
+  align-self: flex-start;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  max-width: 92%;
+  margin: 2px 0;
+}
+.slot {
+  font-size: 13.5px; font-weight: 600;
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(29,29,31,.16);
+  color: var(--ink-2);
+  background: var(--white);
+  white-space: nowrap;
+}
+.slot.selected {
+  border-color: var(--copper);
+  color: var(--copper-deep);
+  background: rgba(168,90,50,.08);
+}
+
 /* ============ Sections ============ */
 
 .section-title {
