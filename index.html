@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/insculpe.css">
 </head>
 <body>
@@ -29,6 +29,7 @@
       <nav class="topnav">
         <a href="#particuliers">Particuliers</a>
         <a href="#pros">Professionnels</a>
+        <a href="#services">Services</a>
         <a href="#poincon">Le poinçon</a>
       </nav>
       <a class="btn btn-small" href="mailto:contact@insculpe.com">Nous écrire</a>
@@ -41,30 +42,31 @@
     <section class="hero">
       <div class="wrap hero-inner">
         <p class="eyebrow reveal">Immobilier · Maintenance · Petits travaux · Remise en état</p>
-        <h1 class="reveal d1">Le premier réseau<br>d'artisans qualifiés<br>de France.</h1>
+        <h1 class="reveal d1">Le premier réseau d'artisans<br>qualifiés de France.</h1>
         <p class="hero-sub reveal d2">Un seul interlocuteur pour l'entretien de vos biens.
-        Nous qualifions le besoin, envoyons le bon artisan, et clôturons sur photo.</p>
+        Vous écrivez, nous coordonnons, l'artisan intervient — et tout se clôture sur photo.</p>
         <div class="hero-actions reveal d3">
-          <a class="btn btn-dark" href="mailto:contact@insculpe.com">Décrire mon besoin</a>
-          <a class="btn btn-ghost" href="#offres">Découvrir les offres</a>
+          <a class="btn btn-primary" href="mailto:contact@insculpe.com">Décrire mon besoin</a>
+          <a class="link-more" href="#offres">Découvrir les offres <span class="chev">›</span></a>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ REASSURANCE ============ -->
-    <section class="strip">
-      <div class="wrap strip-inner">
-        <div class="strip-item">
-          <span class="strip-title">Qualifiés &amp; assurés</span>
-          <span class="strip-sub">Chaque artisan est vérifié avant d'entrer au réseau</span>
-        </div>
-        <div class="strip-item">
-          <span class="strip-title">Un interlocuteur unique</span>
-          <span class="strip-sub">Vous décrivez, nous coordonnons de bout en bout</span>
-        </div>
-        <div class="strip-item">
-          <span class="strip-title">Clôture sur photo</span>
-          <span class="strip-sub">Chaque intervention est documentée et tracée</span>
+        <!-- Chat mockup — le produit, en messages -->
+        <div class="chat reveal d4" role="img" aria-label="Exemple de conversation entre un client et INSCULPE">
+          <div class="chat-head">
+            <div class="chat-avatar">IN</div>
+            <div class="chat-id">
+              <span class="chat-name">INSCULPE</span>
+              <span class="chat-status">répond en quelques minutes</span>
+            </div>
+          </div>
+          <div class="chat-body">
+            <p class="chat-time">Aujourd'hui 09:41</p>
+            <div class="bubble in">Bonjour, j'ai une fuite sous l'évier de la cuisine 😅</div>
+            <div class="bubble out">Bonjour ! Un plombier du réseau peut passer demain entre 9h et 11h. Le devis vous est envoyé avant toute intervention.</div>
+            <div class="bubble in">Parfait, demain 9h 👍</div>
+            <div class="bubble out">C'est noté. Vous recevrez la photo de clôture dès la fin de l'intervention.</div>
+            <div class="bubble out done"><span class="check">✓</span> Intervention clôturée — photo jointe</div>
+          </div>
         </div>
       </div>
     </section>
@@ -72,33 +74,46 @@
     <!-- ============ DEUX OFFRES ============ -->
     <section class="offers" id="offres">
       <div class="wrap">
-        <h2 class="section-title">Deux offres.<br>Une même exigence.</h2>
+        <h2 class="section-title">Deux offres. Une même exigence.</h2>
         <div class="offer-grid">
 
-          <article class="card card-light" id="particuliers">
-            <p class="card-kicker">Particuliers</p>
-            <h3 class="card-title">Votre logement,<br>entre de bonnes mains.</h3>
-            <p class="card-desc">Dépannage, petits travaux, entretien courant. L'artisan qu'il faut, sans chercher, sans mauvaise surprise.</p>
-            <ul class="card-list">
+          <article class="tile tile-light" id="particuliers">
+            <p class="tile-kicker">Particuliers</p>
+            <h3 class="tile-title">Votre logement,<br>entre de bonnes mains.</h3>
+            <p class="tile-desc">Dépannage, petits travaux, entretien courant. L'artisan qu'il faut, sans chercher, sans mauvaise surprise.</p>
+            <ul class="tile-list">
               <li>Dépannage plomberie, électricité, serrurerie</li>
               <li>Petits travaux et réparations du quotidien</li>
               <li>Devis clair avant chaque intervention</li>
               <li>Artisan vérifié, assuré, évalué</li>
             </ul>
-            <a class="btn btn-dark card-cta" href="mailto:contact@insculpe.com?subject=Demande%20particulier">Demander une intervention</a>
+            <a class="link-more" href="mailto:contact@insculpe.com?subject=Demande%20particulier">Demander une intervention <span class="chev">›</span></a>
+            <div class="tile-visual">
+              <div class="mini-chat">
+                <div class="bubble in">La poignée de la porte d'entrée est cassée…</div>
+                <div class="bubble out">Un serrurier passe cet après-midi. Devis : envoyé ✓</div>
+              </div>
+            </div>
           </article>
 
-          <article class="card card-dark" id="pros">
-            <p class="card-kicker">Professionnels de l'immobilier</p>
-            <h3 class="card-title">Vos lots, gérés<br>techniquement.</h3>
-            <p class="card-desc">Agences, administrateurs de biens, bailleurs. Nous prenons en charge la vie technique de votre parc.</p>
-            <ul class="card-list">
+          <article class="tile tile-dark" id="pros">
+            <p class="tile-kicker">Professionnels de l'immobilier</p>
+            <h3 class="tile-title">Vos lots, gérés<br>techniquement.</h3>
+            <p class="tile-desc">Agences, administrateurs de biens, bailleurs. Nous prenons en charge la vie technique de votre parc.</p>
+            <ul class="tile-list">
               <li>Gestion technique des lots au quotidien</li>
               <li>Remise en état entre deux locataires</li>
               <li>Reporting photo et traçabilité complète</li>
               <li>Un interlocuteur unique, partout en France</li>
             </ul>
-            <a class="btn btn-copper card-cta" href="mailto:contact@insculpe.com?subject=Demande%20professionnelle">Parler à un expert</a>
+            <a class="link-more" href="mailto:contact@insculpe.com?subject=Demande%20professionnelle">Parler à un expert <span class="chev">›</span></a>
+            <div class="tile-visual">
+              <div class="board">
+                <div class="board-row"><span class="board-lot">Lot 4B · Remise en état</span><span class="badge badge-done">Terminé ✓</span></div>
+                <div class="board-row"><span class="board-lot">Lot 12A · Fuite salle d'eau</span><span class="badge badge-live">Artisan sur place</span></div>
+                <div class="board-row"><span class="board-lot">Lot 7C · Peinture séjour</span><span class="badge badge-wait">Devis envoyé</span></div>
+              </div>
+            </div>
           </article>
 
         </div>
@@ -106,16 +121,16 @@
     </section>
 
     <!-- ============ SERVICES ============ -->
-    <section class="services">
+    <section class="services" id="services">
       <div class="wrap">
-        <h2 class="section-title">Tout ce qui fait vivre<br>un bien immobilier.</h2>
+        <h2 class="section-title">Tout ce qui fait vivre un bien.</h2>
         <div class="service-grid">
-          <div class="service"><span class="service-num">01</span><h4>Dépannage</h4><p>Plomberie, électricité, serrurerie, vitrerie. Vite, et bien.</p></div>
-          <div class="service"><span class="service-num">02</span><h4>Petits travaux</h4><p>Réparations, pose, retouches — le quotidien d'un logement.</p></div>
-          <div class="service"><span class="service-num">03</span><h4>Entretien courant</h4><p>Le préventif qui évite le curatif, planifié à l'avance.</p></div>
-          <div class="service"><span class="service-num">04</span><h4>Remise en état</h4><p>Entre deux occupants : peinture, sols, finitions, clé en main.</p></div>
-          <div class="service"><span class="service-num">05</span><h4>Gestion technique des lots</h4><p>La vie technique de votre parc, déléguée en toute confiance.</p></div>
-          <div class="service"><span class="service-num">06</span><h4>Maintenance</h4><p>Multi-sites, multi-métiers, un seul point de contact.</p></div>
+          <div class="service"><h4>Dépannage</h4><p>Plomberie, électricité, serrurerie, vitrerie. Vite, et bien.</p></div>
+          <div class="service"><h4>Petits travaux</h4><p>Réparations, pose, retouches — le quotidien d'un logement.</p></div>
+          <div class="service"><h4>Entretien courant</h4><p>Le préventif qui évite le curatif, planifié à l'avance.</p></div>
+          <div class="service"><h4>Remise en état</h4><p>Entre deux occupants : peinture, sols, finitions, clé en main.</p></div>
+          <div class="service"><h4>Gestion technique des lots</h4><p>La vie technique de votre parc, déléguée en toute confiance.</p></div>
+          <div class="service"><h4>Maintenance</h4><p>Multi-sites, multi-métiers, un seul point de contact.</p></div>
         </div>
       </div>
     </section>
@@ -123,7 +138,7 @@
     <!-- ============ COMMENT ÇA MARCHE ============ -->
     <section class="steps">
       <div class="wrap">
-        <h2 class="section-title">Simple, du premier<br>message à la photo finale.</h2>
+        <h2 class="section-title">Simple, du premier message<br>à la photo finale.</h2>
         <div class="steps-grid">
           <div class="step">
             <span class="step-num">1</span>
@@ -162,7 +177,7 @@
     <div class="wrap footer-inner">
       <p class="footer-lead">Parlons de vos biens.</p>
       <p class="footer-contact">
-        <a class="btn btn-copper" href="mailto:contact@insculpe.com">contact@insculpe.com</a>
+        <a class="btn btn-primary" href="mailto:contact@insculpe.com">contact@insculpe.com</a>
       </p>
       <p class="footer-fine">INSCULPE — Paris · Le premier réseau d'artisans qualifiés de France</p>
     </div>
