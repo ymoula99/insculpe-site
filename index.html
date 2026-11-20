@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="INSCULPE — un pépin dans un logement ? Envoyez un message. Artisan dépêché, qui-paie-quoi tranché selon la loi, et tout est gravé au carnet du bien.">
-<title>INSCULPE — Un pépin ? C'est déjà géré.</title>
-<link rel="stylesheet" href="assets/insculpe.css">
+<meta name="description" content="INSCULPE réunit chaque bien immobilier en un seul système : les lieux, l'inventaire, les personnes, les règles, les demandes et le carnet. Vous lui écrivez, il s'en occupe.">
+<title>INSCULPE — Le système d'exploitation du bien immobilier</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<header>
-  <nav class="nav">
+<header class="top">
+  <nav class="nav" aria-label="Navigation principale">
     <a class="wordmark" href="index.html">INSCULPE<b>.</b></a>
     <div class="nav-links">
       <a href="pros.html">Professionnels</a>
@@ -20,510 +21,321 @@
       <a href="#tarifs">Tarifs</a>
       <a href="#faq">Questions</a>
       <a href="https://chat.insculpe.com">Essayer l'assistant</a>
-      <a href="https://chat.insculpe.com/connexion">Se connecter</a>
-      <a class="btn" href="https://chat.insculpe.com/inscription">Créer mon espace</a>
+      <a class="nav-keep" href="https://chat.insculpe.com/connexion">Se connecter</a>
+      <a class="btn btn--small nav-keep" href="https://chat.insculpe.com/inscription">Créer mon espace</a>
     </div>
   </nav>
 </header>
 
-<!-- ═══ HERO ═══ -->
+<main>
+
+<!-- ═══ HERO : le bien, couche par couche ═══ -->
 <section class="hero" id="top">
-  <div class="wrap">
-    <span class="eyebrow reveal">Incidents &amp; petits travaux, pris en charge</span>
-    <h1 class="reveal">Un pépin ?<br>C'est déjà géré.</h1>
-    <p class="sect-sub reveal" style="margin-inline:auto">La fuite de 23 h. La chaudière un 24 décembre. L'artisan qui ne rappelle jamais. Envoyez un message — on s'occupe de tout, et chaque action est gravée au carnet du bien.</p>
-    <div class="hero-ctas reveal">
-      <a class="btn" href="#contact">Demander une démo</a>
-      <a class="btn btn--ghost" href="https://chat.insculpe.com">Essayer l'assistant</a>
-      <a class="tlink" href="#parcours">Voir comment ça marche</a>
+  <div class="wrap hero-grid">
+
+    <div class="hero-text">
+      <h1>Le système d'exploitation du bien immobilier.</h1>
+      <p class="lead">Les lieux, ce qu'ils contiennent, qui décide, tout ce qui s'y est passé&nbsp;: INSCULPE réunit chaque bien en un seul système. Vous lui écrivez une phrase, il fait le reste.</p>
+
+      <div class="demo" id="demo">
+        <div class="demo-tabs" role="group" aria-label="Choisir un exemple">
+          <button type="button" class="tab is-on" data-sc="maison" aria-pressed="true">Une maison</button>
+          <button type="button" class="tab" data-sc="studio" aria-pressed="false">Un studio loué</button>
+          <button type="button" class="tab" data-sc="immeuble" aria-pressed="false">Un immeuble</button>
+        </div>
+        <div class="demo-talk" aria-live="polite">
+          <p class="msg msg--in"><span id="msgIn">La moquette de la chambre est à nettoyer.</span><i class="caret" aria-hidden="true"></i></p>
+          <p class="msg msg--out" id="msgOut">Nettoyage de la moquette&nbsp;: 480&nbsp;€, prix ferme, jeudi à 9&nbsp;h. Je confirme&nbsp;?</p>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a class="btn" href="#contact">Demander une démo</a>
+        <a class="btn btn--ghost" href="https://chat.insculpe.com">Essayer l'assistant</a>
+      </div>
     </div>
 
-    <!-- Mockup produit : message → décision → carnet -->
-    <div class="window reveal">
-      <div class="window-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="window-title">INSCULPE — Studio, Paris IXᵉ</span>
+    <div class="stage" id="stage">
+      <div class="stack" aria-hidden="true">
+
+        <div class="plate" style="--i:0" data-layer="lieux">
+          <svg viewBox="0 0 300 300">
+            <rect class="room" data-room="sejour" x="22" y="22" width="148" height="148"/>
+            <rect class="room" data-room="cuisine" x="170" y="22" width="108" height="88"/>
+            <rect class="room" data-room="sdb" x="170" y="110" width="108" height="60"/>
+            <rect class="room" data-room="chambre" x="22" y="170" width="148" height="108"/>
+            <rect class="room" data-room="entree" x="170" y="170" width="108" height="108"/>
+            <path class="door" d="M150 170h-26M170 196v26M214 170h26M170 60v24"/>
+          </svg>
+        </div>
+
+        <div class="plate" style="--i:1" data-layer="inventaire">
+          <svg viewBox="0 0 300 300">
+            <rect class="eq eq--area" data-eq="moquette" x="36" y="184" width="120" height="80" rx="4"/>
+            <rect class="eq" data-eq="chaudiere" x="236" y="36" width="28" height="28" rx="3"/>
+            <circle class="eq" data-eq="interphone" cx="252" cy="252" r="11"/>
+            <rect class="eq" x="44" y="44" width="54" height="22" rx="3"/>
+            <circle class="eq" cx="124" cy="120" r="9"/>
+            <rect class="eq" x="192" y="124" width="36" height="20" rx="3"/>
+            <circle class="eq" cx="196" cy="48" r="8"/>
+          </svg>
+        </div>
+
+        <div class="plate" style="--i:2" data-layer="personnes">
+          <svg viewBox="0 0 300 300">
+            <path class="link" d="M96 104 L204 104 L150 206 Z"/>
+            <circle class="who" data-who="proprio" cx="96" cy="104" r="26"/>
+            <circle class="who" data-who="occupant" cx="204" cy="104" r="26"/>
+            <circle class="who" data-who="pro" cx="150" cy="206" r="26"/>
+          </svg>
+        </div>
+
+        <div class="plate" style="--i:3" data-layer="regles">
+          <svg viewBox="0 0 300 300">
+            <path class="rail" d="M48 78h204M48 126h204M48 174h204M48 222h204"/>
+            <circle class="knob" cx="112" cy="78" r="10"/>
+            <circle class="knob" cx="196" cy="126" r="10"/>
+            <circle class="knob" cx="84" cy="174" r="10"/>
+            <circle class="knob" cx="164" cy="222" r="10"/>
+          </svg>
+        </div>
+
+        <div class="plate" style="--i:4" data-layer="demandes">
+          <svg viewBox="0 0 300 300">
+            <rect class="ticket" x="40" y="44" width="100" height="62" rx="6"/>
+            <rect class="ticket" x="160" y="44" width="100" height="62" rx="6"/>
+            <rect class="ticket ticket--new" x="40" y="126" width="220" height="130" rx="8"/>
+            <path class="ticket-lines" d="M62 162h120M62 190h170M62 218h90"/>
+          </svg>
+        </div>
+
+        <div class="plate" style="--i:5" data-layer="carnet">
+          <svg viewBox="0 0 300 300">
+            <path class="rows" d="M44 60h212M44 96h212M44 132h212M44 168h212M44 204h212"/>
+            <path class="engrave" pathLength="1" d="M44 240h212"/>
+          </svg>
+        </div>
+
       </div>
-      <div class="window-body">
-        <div class="pane">
-          <span class="pane-label">Le message — WhatsApp · 19 h 42</span>
-          <div class="bubble">Bonsoir, plus de chauffage depuis hier soir… je crois que la chaudière est en panne 😕<time>19:42</time></div>
-          <div class="bubble bubble--out">Bien reçu. On s'en occupe — un chauffagiste vous propose un créneau d'ici quelques minutes.<time>19:43 ✓✓</time></div>
-        </div>
-        <div class="pane">
-          <span class="pane-label">La décision — selon la loi · 19 h 43</span>
-          <div class="dcard">
-            <div class="drow"><span>Problème</span><b>Chaudière en panne</b></div>
-            <div class="drow"><span>Cause</span><b>Usure de l'équipement</b></div>
-            <div class="drow"><span>À la charge de</span><b><span class="pill pill--info">Propriétaire</span></b></div>
-            <div class="drow"><span>Action</span><b>Chauffagiste prévenu</b></div>
-            <div class="drow"><span>Fondement</span><b>Loi du 6 juillet 1989</b></div>
-          </div>
-          <p class="verify-line">✓ Au moindre doute, un humain prend la main.</p>
-        </div>
-        <div class="pane pane--noir">
-          <span class="pane-label">Le carnet — gravé · 19 h 43</span>
-          <div class="timeline">
-            <div class="tl-row"><time>19:42</time><span>Message reçu</span><i>✓</i></div>
-            <div class="tl-row"><time>19:43</time><span>Situation comprise</span><i>✓</i></div>
-            <div class="tl-row"><time>19:43</time><span>Décision rendue</span><i>✓</i></div>
-            <div class="tl-row"><time>19:43</time><span>Chauffagiste prévenu</span><i>✓</i></div>
-            <div class="tl-seal">■ Gravé au carnet du bien — rien ne s'efface, jamais.</div>
-          </div>
-        </div>
+
+      <ol class="labels" id="labels">
+        <li style="--i:0" data-layer="lieux"><b>Les lieux</b><span></span></li>
+        <li style="--i:1" data-layer="inventaire"><b>L'inventaire</b><span></span></li>
+        <li style="--i:2" data-layer="personnes"><b>Les personnes</b><span></span></li>
+        <li style="--i:3" data-layer="regles"><b>Les règles</b><span></span></li>
+        <li style="--i:4" data-layer="demandes"><b>Les demandes</b><span></span></li>
+        <li style="--i:5" data-layer="carnet"><b>Le carnet</b><span></span></li>
+      </ol>
+
+      <p class="readout" id="readout" aria-hidden="true"><b></b><span></span></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ LES SIX COUCHES ═══ -->
+<section class="couches" id="couches">
+  <div class="wrap">
+    <div class="sect-head">
+      <h2>Un bien, six couches.</h2>
+      <p>Chaque demande traverse les mêmes couches, dans le même ordre. C'est ce qui permet de répondre juste, vite, et de pouvoir le prouver ensuite.</p>
+    </div>
+    <ol class="couche-list">
+      <li>
+        <h3>Les lieux</h3>
+        <p>L'immeuble, le lot, chaque pièce. Une demande pointe toujours vers un endroit précis.</p>
+        <p class="ex">Chambre, 2ᵉ étage, 31 m²</p>
+      </li>
+      <li>
+        <h3>L'inventaire</h3>
+        <p>Équipements, matériaux, garanties, contrats d'entretien, documents.</p>
+        <p class="ex">Chaudière gaz de 2009, révisée en octobre</p>
+      </li>
+      <li>
+        <h3>Les personnes</h3>
+        <p>Qui habite, qui possède, qui gère, et qui a le droit de dire oui.</p>
+        <p class="ex">Accord du propriétaire au-delà de 300 €</p>
+      </li>
+      <li>
+        <h3>Les règles</h3>
+        <p>Vos seuils, vos préférences, vos artisans attitrés, et la loi quand le bien est loué.</p>
+        <p class="ex">Jamais d'intervention avant 10 h</p>
+      </li>
+      <li>
+        <h3>Les demandes</h3>
+        <p>Interventions en cours, entretien prévu, devis en attente de votre accord.</p>
+        <p class="ex">Climatisation à poser, devis ferme reçu</p>
+      </li>
+      <li>
+        <h3>Le carnet</h3>
+        <p>Tout ce qui s'est passé, daté et prouvé. On y ajoute des lignes, on n'en efface jamais.</p>
+        <p class="ex">12 mars, moquette nettoyée, photo à l'appui</p>
+      </li>
+    </ol>
+    <p class="couche-note">Situation inhabituelle, gros montant ou simple doute&nbsp;: un humain décide, toujours.</p>
+  </div>
+</section>
+
+<!-- ═══ DU BIEN AU PARC ═══ -->
+<section class="parc" id="parc">
+  <div class="wrap">
+    <div class="sect-head">
+      <h2>Un bien, puis tous les autres.</h2>
+      <p>Le système est le même pour une maison, douze lots ou un immeuble entier. Seule la vue change.</p>
+    </div>
+
+    <div class="parc-switch" role="group" aria-label="Changer de vue">
+      <button type="button" class="seg is-on" data-vue="un" aria-pressed="true">Une maison</button>
+      <button type="button" class="seg" data-vue="douze" aria-pressed="false">Douze lots</button>
+      <button type="button" class="seg" data-vue="immeuble" aria-pressed="false">Un immeuble</button>
+    </div>
+
+    <div class="parc-board">
+      <p class="parc-resume" id="parcResume" aria-live="polite">Maison, Paris 16ᵉ. Une demande en cours, rien n'attend votre accord.</p>
+      <div class="parc-stage" id="parcStage" data-vue="un">
+        <div class="batiment" aria-hidden="true"></div>
       </div>
+      <p class="parc-pour">
+        <span id="parcPour">Pour celles et ceux qui veulent un seul contact pour toute la maison.</span>
+        <a id="parcLien" href="proprietaire-occupant.html">Voir l'offre Ma maison</a>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ═══ PERSONAS ═══ -->
-<section class="personas" id="pourqui">
+<!-- ═══ ENGAGEMENTS ═══ -->
+<section class="mesures">
   <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Dites-nous qui vous êtes.</h2>
-      <p class="sect-sub reveal" style="margin-inline:auto">Le même intendant. Trois vies très différentes.</p>
+    <div class="sect-head">
+      <h2>Ce que nous mesurons.</h2>
+      <p>Les objectifs du programme pilote. Le système les mesure en continu, personne ne les estime.</p>
     </div>
-    <div class="persona-grid">
-      <a class="persona-card reveal" href="pros.html">
-        <span class="pc-ico pc-ico--noir">PRO</span>
-        <span class="eyebrow">Agences · Syndics · Gestionnaires</span>
-        <h3>Vos clients vous jugent<br>sur les pépins.</h3>
-        <p>Vos équipes passent leurs journées à courir après des plombiers. INSCULPE encaisse le flux — sous votre marque. Elles décident, au lieu de subir.</p>
-        <span class="pc-link">Découvrir l'offre pro</span>
-      </a>
-      <a class="persona-card reveal" href="proprietaires-bailleurs.html">
-        <span class="pc-ico pc-ico--bleu">3+</span>
-        <span class="eyebrow">Propriétaires de plusieurs biens</span>
-        <h3>Vos locataires appellent.<br>Plus jamais vous.</h3>
-        <p>Réponse en minutes, artisan coordonné, « qui paie » tranché par la loi plutôt qu'au téléphone. Vos soirées redeviennent des soirées.</p>
-        <span class="pc-link">Découvrir</span>
-      </a>
-      <a class="persona-card reveal" href="proprietaire-occupant.html">
-        <span class="pc-ico pc-ico--sceau">🏠</span>
-        <span class="eyebrow">Propriétaire de votre maison</span>
-        <h3>Un pépin chez vous ?<br>Un seul message.</h3>
-        <p>Fini la chasse à l'artisan. Un contact unique, un devis soumis à votre accord, et un carnet d'entretien qui prendra de la valeur avec la maison.</p>
-        <span class="pc-link">Découvrir</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CARROUSEL « DÉCOUVREZ » ═══ -->
-<section class="discover" id="decouvrir">
-  <div class="wrap">
-    <div class="discover-head">
-      <h2 class="sect-title reveal">Découvrez INSCULPE.</h2>
-      <div class="paddles reveal">
-        <button class="paddle" id="pPrev" aria-label="Précédent">‹</button>
-        <button class="paddle" id="pNext" aria-label="Suivant">›</button>
-      </div>
-    </div>
-  </div>
-  <div class="wrap rail-outer">
-    <div class="rail" id="rail">
-
-      <!-- 1 · Nuit -->
-      <article class="card card--noir reveal">
-        <div class="card-head">
-          <span class="eyebrow">Disponibilité</span>
-          <h3>3 h du matin.<br>Quelqu'un répond.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-nuit">
-            <div class="stars" data-stars="90"></div>
-            <div class="lune"></div>
-            <div class="colline"></div>
-            <div class="fenetre">
-              <div class="fh"><span>03 : 12 — SMS reçu</span><span>pris en charge</span></div>
-              <div class="fv">« Fuite sous l'évier, ça coule beaucoup »</div>
-              <div class="fs">✓ Plombier prévenu · locataire rassuré — 03 : 13</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2 · Règles -->
-      <article class="card card--noir reveal">
-        <div class="card-head">
-          <span class="eyebrow">Fini les disputes</span>
-          <h3>Qui paie ?<br>La loi répond.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-regles">
-            <div class="regle-row">
-              <span class="rq">Fuite au robinet<small>entretien courant</small></span>
-              <span class="pill pill--gris">Locataire</span>
-            </div>
-            <div class="regle-row">
-              <span class="rq">Chaudière usée<small>équipement du logement</small></span>
-              <span class="pill pill--info">Propriétaire</span>
-            </div>
-            <div class="regle-row">
-              <span class="rq">Dégât des eaux<small>sinistre</small></span>
-              <span class="pill pill--gris">Assurance</span>
-            </div>
-            <div class="regle-row">
-              <span class="rq">Départ du locataire<small>préavis reçu</small></span>
-              <span class="pill pill--warn">Un humain</span>
-            </div>
-            <div class="regle-foot">Les mêmes règles pour tous, tirées de la loi.<br><b>Difficile de discuter avec le décret.</b></div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3 · Carnet -->
-      <article class="card reveal">
-        <div class="card-head">
-          <span class="eyebrow">Le carnet du bien</span>
-          <h3>Tout est noté.<br>Rien ne se perd.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-journal">
-            <div class="jrow"><span class="jt">Message du locataire</span><span class="jh">lun. 19:42</span><span class="js">✓</span></div>
-            <div class="jrow"><span class="jt">Prise en charge</span><span class="jh">lun. 19:43</span><span class="js">✓</span></div>
-            <div class="jrow"><span class="jt">Chauffagiste prévenu</span><span class="jh">lun. 19:43</span><span class="js">✓</span></div>
-            <div class="jrow"><span class="jt">Intervention planifiée</span><span class="jh">mar. 08:10</span><span class="js">✓</span></div>
-            <div class="jrow"><span class="jt">Réparé, photo à l'appui</span><span class="jh">jeu. 10:36</span><span class="js">✓</span></div>
-            <div class="jrow"><span class="jt">Propriétaire informé</span><span class="jh">jeu. 10:37</span><span class="js">✓</span></div>
-            <div class="jfoot">Chaque ligne est datée et gravée.<br><b>Rien ne peut être modifié ni effacé — jamais.</b></div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4 · Humain -->
-      <article class="card reveal">
-        <div class="card-head">
-          <span class="eyebrow">Supervision humaine</span>
-          <h3>Un doute ?<br>Un humain tranche.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-cockpit">
-            <div class="esc">
-              <div class="eh"><b>Départ d'un locataire</b><span class="pill pill--rouge">Prioritaire</span></div>
-              <div class="em">T2 Lyon 3ᵉ — préavis reçu ce matin</div>
-              <div class="esc-actions"><span>Voir le dossier</span><span class="go">Décider</span></div>
-            </div>
-            <div class="esc">
-              <div class="eh"><b>Situation inhabituelle</b><span class="pill pill--warn">À examiner</span></div>
-              <div class="em">« Odeur bizarre dans la cave »</div>
-              <div class="esc-actions"><span>Voir le dossier</span><span class="go">Décider</span></div>
-            </div>
-            <div class="esc">
-              <div class="eh"><b>Devis de 780 €</b><span class="pill pill--warn">Gros montant</span></div>
-              <div class="em">Colonne d'eau — accord du propriétaire requis</div>
-              <div class="esc-actions"><span>Voir le dossier</span><span class="go">Décider</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5 · Canaux -->
-      <article class="card reveal">
-        <div class="card-head">
-          <span class="eyebrow">Zéro friction</span>
-          <h3>Rien à installer.<br>Un simple message.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-canaux">
-            <div class="icon-grid">
-              <div class="app-ico ico-wa">WhatsApp</div>
-              <div class="app-ico ico-mail">Mail</div>
-              <div class="app-ico ico-sms">SMS</div>
-              <div class="app-ico ico-pdf">PDF</div>
-              <div class="app-ico ico-ins">INS</div>
-              <div class="app-ico ico-cal"><small>1</small></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 6 · Fin de travaux -->
-      <article class="card reveal">
-        <div class="card-head">
-          <span class="eyebrow">Fin de travaux</span>
-          <h3>« C'est réparé »<br>ne suffit pas.</h3>
-        </div>
-        <div class="card-visual">
-          <div class="scene-quittance">
-            <div class="chrono">Relance auto <b>à J+1</b></div>
-            <div class="doc">
-              <div class="d-mark">INSCULPE</div>
-              <div class="d-title">Rapport d'intervention</div>
-              <div class="d-sub">Chaudière — remplacement de la vanne · Studio, Paris IXᵉ</div>
-              <div class="d-line"><span>Intervenu</span><b>jeudi, 10 h 05</b></div>
-              <div class="d-line"><span>Durée</span><b>1 h 20</b></div>
-              <div class="d-line"><span>Montant</span><b>212,00 €</b></div>
-              <div class="d-stamp">PHOTO À L'APPUI</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PARCOURS ═══ -->
-<section class="parcours-bande" id="parcours">
-  <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Vous envoyez un message.<br>Voici ce qui se passe.</h2>
-    </div>
-    <div class="flow">
-      <div class="flow-step reveal">
-        <div class="flow-ico">« … »</div>
-        <h3>Reçu</h3>
-        <p>WhatsApp, SMS ou email. Pas de formulaire, pas de compte, pas d'attente.</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-ico">✓</div>
-        <h3>Compris</h3>
-        <p>Panne, fuite, volet bloqué&nbsp;: la situation est identifiée en quelques secondes.</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-ico f-noir">§</div>
-        <h3>Décidé</h3>
-        <p>Qui paie, qui répare, qui prévient — tranché par des règles écrites, tirées de la loi.</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-ico">GO</div>
-        <h3>Réglé</h3>
-        <p>Le bon artisan prévenu, un créneau proposé, chacun tenu informé. Relance auto s'il traîne.</p>
-      </div>
-      <div class="flow-step reveal">
-        <div class="flow-ico f-sceau">INS</div>
-        <h3>Gravé</h3>
-        <p>Chaque étape rejoint le carnet du bien — datée, prouvée, impossible à falsifier.</p>
-      </div>
-    </div>
-    <p class="flow-note reveal">Situation inhabituelle, gros montant ou simple doute → <b>un humain décide, toujours.</b></p>
-  </div>
-</section>
-
-<!-- ═══ LE CARNET — BANDE SOMBRE ═══ -->
-<section class="forever" id="journal">
-  <div class="wrap">
-    <span class="eyebrow reveal">Insculpere — graver dans</span>
-    <h2 class="sect-title reveal" style="margin-top:12px">Gravé. Pour toujours.</h2>
-    <p class="sect-sub reveal" style="margin-inline:auto">Dans dix ans, vous saurez encore qui a réparé quoi, quand, et pour combien. Le carnet suit le bien — pas votre mémoire, pas vos cartons d'archives.</p>
-  </div>
-  <div class="hash-ticker" aria-hidden="true"><div class="hash-track" id="hashTrack"></div></div>
-</section>
-
-<!-- ═══ MÉTRIQUES ═══ -->
-<section class="metrics">
-  <div class="wrap">
-    <div class="metrics-grid">
-      <div class="metric reveal"><span class="num">&lt; 5 <em>min</em></span><p>Première réponse,<br>nuits et week-ends compris</p></div>
-      <div class="metric reveal"><span class="num">&lt; 1 <em>h</em></span><p>Le bon artisan prévenu,<br>créneau proposé</p></div>
-      <div class="metric reveal"><span class="num">&lt; 3 <em>h</em></span><p>De votre temps<br>par bien et par an</p></div>
-      <div class="metric reveal"><span class="num">100 <em>%</em></span><p>Des actions au carnet,<br>avec leur justification</p></div>
-    </div>
-    <p class="metrics-note reveal">Objectifs du programme pilote — mesurés en continu par le système, jamais estimés.</p>
-  </div>
-</section>
-
-<!-- ═══ TROIS ESPACES ═══ -->
-<section class="duo" id="espaces">
-  <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Chacun voit ce qui le concerne.</h2>
-      <p class="sect-sub reveal" style="margin-inline:auto">Le même carnet, trois regards — propriétaire, professionnel, occupant.</p>
-    </div>
-    <div class="duo-grid">
-
-      <div class="duo-card reveal">
-        <span class="eyebrow">Portail propriétaire</span>
-        <h3>Un suivi.<br>Clair et net.</h3>
-        <p>Interventions, dépenses, décisions — une page par bien, en lecture seule. Et le point mensuel par email.</p>
-        <div class="duo-visual">
-          <div class="releve">
-            <div class="r-h"><span class="r-t">SUIVI</span><span class="r-p">Juin 2026 — Studio, Paris IXᵉ</span></div>
-            <div class="r-line"><span>Chaudière — vanne remplacée, photo ✓</span><b>212,00 €</b></div>
-            <div class="r-line"><span>Fuite robinet — charge locative</span><b>—</b></div>
-            <div class="r-line"><span>Volet séjour — devis, votre accord requis</span><b>180,00 €</b></div>
-            <div class="r-line total"><span>Dépenses du mois</span><b>212,00 €</b></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="duo-card reveal">
-        <span class="eyebrow">Portail pro</span>
-        <h3>Le cockpit.<br>Rien que l'essentiel.</h3>
-        <p>Les dossiers qui méritent un regard humain, avec tout l'historique du bien sous les yeux. Décision en un clic — gravée, comme le reste.</p>
-        <div class="duo-visual">
-          <div class="mini-cockpit">
-            <div class="esc">
-              <div class="eh"><b>Départ d'un locataire</b><span class="pill pill--rouge">Prioritaire</span></div>
-              <div class="em">T2 Lyon 3ᵉ — préavis reçu ce matin</div>
-              <div class="esc-actions"><span>Voir le dossier</span><span class="go">Décider</span></div>
-            </div>
-            <div class="esc">
-              <div class="eh"><b>Devis de 780 €</b><span class="pill pill--warn">Gros montant</span></div>
-              <div class="em">Colonne d'eau — accord du propriétaire</div>
-              <div class="esc-actions"><span>Voir le dossier</span><span class="go">Décider</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="duo-card reveal">
-        <span class="eyebrow">App occupant</span>
-        <h3>Signaler, suivre.<br>Dans la poche.</h3>
-        <p>Déclarer un pépin, suivre l'intervention, retrouver l'historique — ou simplement continuer sur WhatsApp. Au choix.</p>
-        <div class="duo-visual">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-notch"></div>
-              <div class="app-title">INSCULPE</div>
-              <div class="app-row"><span>Chaudière<small>réparée jeudi · photo à l'appui</small></span><span class="dl">✓</span></div>
-              <div class="app-row"><span>Volet séjour<small>artisan prévenu · créneau proposé</small></span><span class="dl">…</span></div>
-              <span class="app-cta">＋ Déclarer un pépin</span>
-              <div class="app-status">Réponse en général <b>en moins de 5 minutes</b></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <dl class="mesure-grid">
+      <div><dt>moins de 5 min</dt><dd>pour la première réponse, nuits et week-ends compris</dd></div>
+      <div><dt>moins d'1 h</dt><dd>pour prévenir le bon artisan et proposer un créneau</dd></div>
+      <div><dt>moins de 3 h</dt><dd>de votre temps par bien et par an</dd></div>
+      <div><dt>100 %</dt><dd>des actions au carnet, avec leur justification</dd></div>
+    </dl>
   </div>
 </section>
 
 <!-- ═══ CONFORMITÉ ═══ -->
 <section class="conf" id="conformite">
   <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Vos données restent vos données.</h2>
-      <p class="sect-sub reveal" style="margin-inline:auto">La confiance n'est pas une promesse. C'est l'architecture.</p>
+    <div class="sect-head">
+      <h2>Vos données restent vos données.</h2>
     </div>
-    <div class="conf-grid">
-      <div class="conf-card reveal">
-        <div class="ci">UE</div>
-        <h3>Hébergement européen</h3>
-        <p>Données et traitements en Union européenne, de bout en bout.</p>
-      </div>
-      <div class="conf-card reveal">
-        <div class="ci">−</div>
-        <h3>Le strict nécessaire</h3>
-        <p>Le système ne lit que le message et la fiche du logement. Jamais la vie privée des personnes.</p>
-      </div>
-      <div class="conf-card reveal">
-        <div class="ci">∅</div>
-        <h3>Zéro entraînement</h3>
-        <p>Vos échanges ne servent à entraîner personne. Ils restent vos échanges.</p>
-      </div>
-      <div class="conf-card reveal">
-        <div class="ci">⇩</div>
-        <h3>Tout vous appartient</h3>
-        <p>Le carnet complet de votre bien vous est remis sur simple demande.</p>
-      </div>
-    </div>
+    <ul class="conf-list">
+      <li><h3>Hébergement européen</h3><p>Données et traitements en Union européenne, de bout en bout.</p></li>
+      <li><h3>Le strict nécessaire</h3><p>Le système ne lit que le message et la fiche du logement. Jamais la vie privée des personnes.</p></li>
+      <li><h3>Aucun entraînement</h3><p>Vos échanges ne servent à entraîner personne. Ils restent vos échanges.</p></li>
+      <li><h3>Tout vous appartient</h3><p>Le carnet complet de votre bien vous est remis sur simple demande.</p></li>
+    </ul>
   </div>
 </section>
 
 <!-- ═══ TARIFS ═══ -->
-<section class="pricing" id="tarifs">
+<section class="tarifs" id="tarifs">
   <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Des tarifs simples.</h2>
-      <p class="sect-sub reveal" style="margin-inline:auto">Indicatifs pendant la phase pilote — sans engagement de durée.</p>
+    <div class="sect-head">
+      <h2>Des tarifs simples.</h2>
+      <p>Indicatifs pendant la phase pilote, sans engagement de durée.</p>
     </div>
     <div class="plans">
-      <div class="plan reveal">
-        <span class="eyebrow">Ma maison</span>
-        <div class="price">Sur candidature</div>
-        <p class="p-desc">Pour votre résidence — un intendant, vos artisans, et le carnet d'entretien qui suit la maison.</p>
+      <div class="plan">
+        <h3>Ma maison</h3>
+        <p class="prix">Sur candidature</p>
+        <p class="plan-desc">Pour votre résidence&nbsp;: un intendant, vos artisans, et le carnet d'entretien qui suit la maison.</p>
         <ul>
-          <li>Un seul contact pour tous les pépins</li>
+          <li>Un seul contact pour toutes les demandes</li>
           <li>Vos artisans d'abord, notre réseau sinon</li>
           <li>Devis toujours soumis à votre accord</li>
           <li>Carnet d'entretien infalsifiable</li>
         </ul>
-        <a class="btn btn--ghost" href="proprietaire-occupant.html">Découvrir</a>
+        <a class="btn btn--ghost" href="proprietaire-occupant.html">Voir l'offre Ma maison</a>
       </div>
-      <div class="plan plan--star reveal">
-        <span class="eyebrow">Propriétaires</span>
-        <div class="price">14 € <small>/ bien / mois — indicatif</small></div>
-        <p class="p-desc">Pour ceux qui gèrent leurs biens en direct, de 3 à 500 lots. Tous les pépins, pris en charge.</p>
+      <div class="plan plan--star">
+        <h3>Propriétaires</h3>
+        <p class="prix">14 € <small>par bien et par mois, indicatif</small></p>
+        <p class="plan-desc">Pour ceux qui gèrent leurs biens en direct, de 3 à 500 lots.</p>
         <ul>
           <li>Locataires répondus en minutes, 24 h/24</li>
-          <li>Qui-paie-quoi tranché selon la loi</li>
-          <li>Artisans coordonnés, relances auto</li>
+          <li>Qui paie quoi, tranché selon la loi</li>
+          <li>Artisans coordonnés, relances automatiques</li>
           <li>Suivi mensuel par bien</li>
         </ul>
         <a class="btn" href="#contact">Demander une démo</a>
       </div>
-      <div class="plan reveal">
-        <span class="eyebrow">Professionnels</span>
-        <div class="price">Sur devis</div>
-        <p class="p-desc">Agences immobilières, syndics de copropriété, administrateurs de biens — sous votre marque.</p>
+      <div class="plan">
+        <h3>Professionnels</h3>
+        <p class="prix">Sur devis</p>
+        <p class="plan-desc">Agences immobilières, syndics de copropriété, administrateurs de biens, sous votre marque.</p>
         <ul>
-          <li>Marque blanche — vos clients voient votre nom</li>
+          <li>Vos clients voient votre nom</li>
           <li>Règles et seuils adaptés à votre parc</li>
           <li>Engagements de service</li>
           <li>Interlocuteur dédié</li>
         </ul>
-        <a class="btn btn--ghost" href="pros.html">Découvrir l'offre pro</a>
+        <a class="btn btn--ghost" href="pros.html">Voir l'offre pro</a>
       </div>
     </div>
-    <p class="pricing-note reveal">La tarification définitive sera arrêtée avec les clients du programme pilote.</p>
+    <p class="tarifs-note">La tarification définitive sera arrêtée avec les clients du programme pilote.</p>
   </div>
 </section>
 
 <!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq">
-  <div class="wrap">
-    <div class="head">
-      <h2 class="sect-title reveal">Les questions qu'on nous pose.</h2>
+  <div class="wrap faq-wrap">
+    <div class="sect-head">
+      <h2>Les questions qu'on nous pose.</h2>
     </div>
-    <div class="faq-list reveal">
+    <div class="faq-list">
       <details>
         <summary>C'est un robot qui décide de qui paie ?</summary>
-        <p>Non. La technologie sert à lire et comprendre les messages — c'est tout. La décision sort de règles écrites noir sur blanc, tirées de la loi&nbsp;: qui paie, qui répare, qui prévient. Les mêmes règles pour tout le monde, et chaque décision cite le texte sur lequel elle s'appuie.</p>
+        <p>Non. La technologie sert à lire et comprendre les messages, c'est tout. La décision sort de règles écrites noir sur blanc, tirées de la loi&nbsp;: qui paie, qui répare, qui prévient. Les mêmes règles pour tout le monde, et chaque décision cite le texte sur lequel elle s'appuie.</p>
       </details>
       <details>
         <summary>Et si la situation est inhabituelle ?</summary>
-        <p>Un humain prend la main. Situation jamais vue, gros montant, départ d'un locataire — ou simple doute&nbsp;: le dossier remonte à une personne, avec tout l'historique du bien sous les yeux. Sa décision est gravée au carnet comme le reste.</p>
+        <p>Un humain prend la main. Situation jamais vue, gros montant, départ d'un locataire ou simple doute&nbsp;: le dossier remonte à une personne, avec tout l'historique du bien sous les yeux. Sa décision est gravée au carnet comme le reste.</p>
       </details>
       <details>
         <summary>Et les artisans, ils viennent d'où ?</summary>
-        <p>De chez vous, d'abord&nbsp;: vos artisans de confiance sont contactés en premier. À défaut, le réseau du programme pilote prend le relais. Rien n'est engagé au-dessus de vos seuils sans votre accord, l'artisan est relancé automatiquement s'il tarde — et la clôture exige une photo.</p>
+        <p>De chez vous, d'abord&nbsp;: vos artisans de confiance sont contactés en premier. À défaut, le réseau du programme pilote prend le relais. Rien n'est engagé au-dessus de vos seuils sans votre accord, l'artisan est relancé automatiquement s'il tarde, et la clôture exige une photo.</p>
       </details>
       <details>
-        <summary>Les occupants doivent-ils installer une application ?</summary>
-        <p>Rien n'est imposé. Ils peuvent tout faire par WhatsApp, SMS ou email — le numéro suffit. L'app est là en plus, pour ceux qui la préfèrent&nbsp;: déclarer un pépin, suivre l'intervention, retrouver l'historique. Les deux chemins alimentent le même carnet.</p>
+        <summary>Faut-il installer une application ?</summary>
+        <p>Rien n'est imposé. Tout peut se faire par WhatsApp, SMS ou email, le numéro suffit. L'espace en ligne est là en plus, pour suivre une intervention ou retrouver l'historique. Les deux chemins alimentent le même carnet.</p>
       </details>
       <details>
         <summary>Comment être sûr que rien n'est trafiqué ?</summary>
-        <p>Le carnet de votre bien fonctionne comme un registre notarial&nbsp;: on ne peut qu'y ajouter des lignes, jamais en modifier ni en effacer. Chaque ligne est verrouillée avec toutes celles qui la précèdent — toucher à une seule rendrait la falsification immédiatement visible. Vous n'avez pas à nous croire sur parole&nbsp;: ça se vérifie.</p>
+        <p>Le carnet de votre bien fonctionne comme un registre notarial&nbsp;: on ne peut qu'y ajouter des lignes, jamais en modifier ni en effacer. Chaque ligne est verrouillée avec toutes celles qui la précèdent, et toucher à une seule rendrait la falsification immédiatement visible. Vous n'avez pas à nous croire sur parole&nbsp;: ça se vérifie.</p>
       </details>
       <details>
         <summary>Où vont mes données ?</summary>
-        <p>En Europe, de bout en bout. Le système ne lit que le strict nécessaire — le message et la fiche du logement, jamais la vie privée des personnes. Rien ne sert à entraîner quoi que ce soit. Et le carnet complet de votre bien vous est remis sur simple demande.</p>
+        <p>En Europe, de bout en bout. Le système ne lit que le strict nécessaire, et rien ne sert à entraîner quoi que ce soit. Le carnet complet de votre bien vous est remis sur simple demande.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA FINAL ═══ -->
+<!-- ═══ CONTACT ═══ -->
 <section class="final" id="contact">
   <div class="wrap">
-    <span class="eyebrow reveal">Phase pilote — sur candidature</span>
-    <h2 class="reveal">Le prochain pépin,<br>ne le gérez pas.</h2>
-    <p class="reveal">Une démonstration suffit pour comprendre. Amenez votre pire dossier — on le traite devant vous.</p>
-    <div class="final-ctas reveal">
-      <a class="btn" href="mailto:contact@insculpe.com?subject=Demande%20de%20d%C3%A9mo%20INSCULPE">Demander une démo</a>
-      <a class="btn btn--ghost" href="mailto:contact@insculpe.com?subject=Candidature%20programme%20pilote">Rejoindre le pilote</a>
+    <h2>Donnez un système à votre bien.</h2>
+    <p>Une démonstration suffit pour comprendre. Amenez votre pire dossier, on le traite devant vous.</p>
+    <div class="final-ctas">
+      <a class="btn btn--blanc" href="mailto:contact@insculpe.com?subject=Demande%20de%20d%C3%A9mo%20INSCULPE">Demander une démo</a>
+      <a class="btn btn--trait" href="mailto:contact@insculpe.com?subject=Candidature%20programme%20pilote">Rejoindre le pilote</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
+</main>
+
+<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <a class="wordmark" href="index.html" style="font-size:15px">INSCULPE<b>.</b></a>
+      <a class="wordmark" href="index.html">INSCULPE<b>.</b></a>
       <div class="foot-links">
         <a href="pros.html">Professionnels</a>
         <a href="proprietaires-bailleurs.html">Propriétaires</a>
@@ -533,10 +345,10 @@
         <a href="mailto:contact@insculpe.com">Contact</a>
       </div>
     </div>
-    <p class="foot-legal">© <span id="year">2026</span> INSCULPE — <em>insculpere</em> : graver dans, sceller. Les pépins de vos biens, gérés — hébergé en Union européenne.</p>
+    <p class="foot-legal">© <span id="year">2026</span> INSCULPE, du latin <em>insculpere</em>&nbsp;: graver dans. Hébergé en Union européenne.</p>
   </div>
 </footer>
 
-<script src="assets/insculpe.js"></script>
+<script src="assets/home.js"></script>
 </body>
 </html>
